@@ -3,6 +3,7 @@ import math
 import random
 import functools
 import operator
+from torchstat import stat
 
 import torch
 from torch import nn
@@ -757,6 +758,5 @@ class FCMinibatchStd(nn.Module):
         return out
 g=Generator( 256, 3, 8, 5, lr_mlp=0.01, n_res=1)
 d = Discriminator(256)
-from torchstat import stat
-print(stat(g))
-print(stat(d))
+print(stat(d,(3,256,256)))
+print(stat(g,(2,256,256)))
