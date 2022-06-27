@@ -755,3 +755,8 @@ class FCMinibatchStd(nn.Module):
         out = torch.cat([out, stddev], 1)
         out = self.fc(out)
         return out
+g=Generator( 256, 3, 8, 5, lr_mlp=0.01, n_res=1)
+d = Discriminator(256)
+from torchstat import stat
+print(stat(g))
+print(stat(d))
