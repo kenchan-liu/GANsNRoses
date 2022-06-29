@@ -306,9 +306,9 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--iter', type=int, default=300000)
-    parser.add_argument('--batch', type=int, default=4)
-    parser.add_argument('--n_sample', type=int, default=64)
+    parser.add_argument('--iter', type=int, default=10000)
+    parser.add_argument('--batch', type=int, default=1)
+    parser.add_argument('--n_sample', type=int, default=8)
     parser.add_argument('--size', type=int, default=256)
     parser.add_argument('--r1', type=float, default=10)
     parser.add_argument('--lambda_cycle', type=int, default=1)

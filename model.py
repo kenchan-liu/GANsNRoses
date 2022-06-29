@@ -4,7 +4,7 @@ import random
 import functools
 import operator
 from torchstat import stat
-
+from torchsummary import summary
 import torch
 from torch import nn
 from torch.nn import functional as F
@@ -756,9 +756,7 @@ class FCMinibatchStd(nn.Module):
         out = torch.cat([out, stddev], 1)
         out = self.fc(out)
         return out
-"""
 g=Generator( 256, 3, 8, 5, lr_mlp=0.01, n_res=1)
 d = Discriminator(256)
-print(stat(d,(3,256,256)))
-print(stat(g,(2,256,256)))
-"""
+g=g.to("cuda")
+print(summary(g,(3,256,256)))
