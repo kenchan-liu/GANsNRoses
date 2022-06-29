@@ -760,3 +760,14 @@ g=Generator( 256, 3, 8, 5, lr_mlp=0.01, n_res=1)
 d = Discriminator(256)
 g=g.to("cuda")
 print(summary(g,(3,256,256)))
+"""
+#torchsummary
+        total_params += summary[layer]["nb_params"]
+        temp=summary[layer]["output_shape"]
+        if len(temp)>1:
+            for i in range(len(temp)):
+                total_output += np.prod(temp[i])
+        else:
+            total_output += np.prod(temp)
+
+"""
